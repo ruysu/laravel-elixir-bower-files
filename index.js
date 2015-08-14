@@ -60,11 +60,11 @@ Elixir.extend('bowerJs', function(outputDir, options) {
     });
 });
 
-Elixir.extend('bowerMain', function(filename, shim, outputDir) {
+Elixir.extend('bowerRequireMain', function(filename, shim, outputDir) {
     var paths = new Elixir.GulpPaths()
         .output(outputDir || config.get('assets.js.folder'));
 
-    new Elixir.Task('bowerMain', function() {
+    new Elixir.Task('bowerRequireMain', function() {
         var main = {paths: {}, baseUrl: 'js', shim: (shim || {})};
         var files = filenames.get("all"),
             packages = [];
