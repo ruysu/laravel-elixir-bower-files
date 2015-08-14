@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     beautify = require('gulp-jsbeautify'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
+    Elixir = require('laravel-elixir'),
     merge = require('merge-stream'),
     path = require('path'),
     exists = require('path-exists').sync,
@@ -61,7 +62,7 @@ Elixir.extend('bowerJs', function(outputDir, options) {
 
 Elixir.extend('bowerMain', function(filename, shim, outputDir) {
     var paths = new Elixir.GulpPaths()
-        .output(outputDir || config.get('assets.js.folder') + '/vendor');
+        .output(outputDir || config.get('assets.js.folder'));
 
     new Elixir.Task('bowerMain', function() {
         var main = {paths: {}, baseUrl: 'js', shim: (shim || {})};
