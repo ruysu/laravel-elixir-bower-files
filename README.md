@@ -13,7 +13,7 @@ First you need to install this package.
 npm install --save-dev laravel-elixir-bower-files
 ```
 
-Then require this package into your `gulpfile.js` and call the `bowerFonts` method.
+Then require this package into your `gulpfile.js`.
 
 ```js
 var Elixir = require('laravel-elixir');
