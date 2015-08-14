@@ -35,6 +35,9 @@ Elixir.extend('bowerJs', function(outputDir, options) {
                 var filename = file.history[file.history.length - 1];
                 return !(/\.min\.js$/.test(filename));
             },
+            uglifyScripts = function(file) {
+                return isNotMinified(file) && config.production;
+            },
             jsfiles = bower_components.ext('js').deps,
             tasks = [],
             createFolder;
@@ -47,7 +50,7 @@ Elixir.extend('bowerJs', function(outputDir, options) {
 
                 tasks.push(
                     gulp.src(jsfiles[packageName])
-                        .pipe(gulpif(isNotMinified, uglify()))
+                        .pipe(gulpif(uglifyScripts, uglify()))
                         .pipe(gulpif(createFolder, rename({dirname: packageName.replace(/\.js$/, '')})))
                         .pipe(gulpif(!createFolder, rename({basename: packageName.replace(/\.js$/, '')})))
                         .pipe(filenames(packageName.replace(/\.js$/, '')))
