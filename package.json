@@ -1,0 +1,34 @@
+{
+  "name": "laravel-elixir-bower-files",
+  "version": "1.0.0",
+  "description": "Minify html files with Laravel Elixir",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gerardo Gómez <code@gerardo.im>",
+  "license": "MIT",
+  "dependencies": {
+    "bower-files": "^3.8.0",
+    "gulp": "^3.8.8",
+    "gulp-file": "^0.2.0",
+    "gulp-filenames": "^1.3.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jsbeautify": "^0.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "path-exists": "^1.0.0",
+    "run-sequence": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruysu/laravel-elixir-bower-files"
+  },
+  "keywords": [
+    "laravel",
+    "elixir",
+    "bower",
+    "laravel-elixir-bower"
+  ]
+}
