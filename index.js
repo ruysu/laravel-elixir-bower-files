@@ -13,6 +13,11 @@ var gulp = require('gulp'),
     sequence = require('run-sequence'),
     config = Elixir.config;
 
+/**
+ * Publish  javascript main files into another folder
+ * @param  {string|object}  outputDir     The destination folder or an options object
+ * @param  {object}         options       Options object passed to bower-files
+ */
 Elixir.extend('bowerJs', function(outputDir, options) {
     // Options were provided on the outputDir parameter
     if (typeof outputDir == 'object') {
@@ -63,6 +68,12 @@ Elixir.extend('bowerJs', function(outputDir, options) {
     });
 });
 
+/**
+ * Generate a requirejs main file from the proccessed files
+ * @param  {string}  filename      The filename of the main file
+ * @param  {object}  shim          The requirejs shim definitions
+ * @param  {object}  outputDir     Options object passed to bower-files
+ */
 Elixir.extend('bowerRequireMain', function(filename, shim, outputDir) {
     var paths = new Elixir.GulpPaths()
         .output(outputDir || config.get('assets.js.folder'));
@@ -91,6 +102,11 @@ Elixir.extend('bowerRequireMain', function(filename, shim, outputDir) {
 
 });
 
+/**
+ * Publish font main files into another folder
+ * @param  {string|object}  outputDir     The destination folder or an options object
+ * @param  {object}         options       Options object passed to bower-files
+ */
 Elixir.extend('bowerFonts', function(outputDir, options) {
     // Options were provided on the outputDir parameter
     if (typeof outputDir == 'object') {
@@ -122,6 +138,11 @@ Elixir.extend('bowerFonts', function(outputDir, options) {
 
 });
 
+/**
+ * Publish image main files into another folder
+ * @param  {string|object}  outputDir     The destination folder or an options object
+ * @param  {object}         options       Options object passed to bower-files
+ */
 Elixir.extend('bowerImages', function(outputDir, options) {
     // Options were provided on the outputDir parameter
     if (typeof outputDir == 'object') {
@@ -151,5 +172,4 @@ Elixir.extend('bowerImages', function(outputDir, options) {
 
         return merge.apply(this, tasks);
     });
-
 });
