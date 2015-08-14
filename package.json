@@ -1,7 +1,7 @@
 {
   "name": "laravel-elixir-bower-files",
   "version": "1.0.0",
-  "description": "Minify html files with Laravel Elixir",
+  "description": "Publish you bower components main files",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
