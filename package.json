@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-bower-files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Publish you bower components main files",
   "main": "index.js",
   "scripts": {
